@@ -10,7 +10,7 @@
      <style>
         .push-down{
             position: absolute;
-            top: 90px;
+            top: 70px;
             width: 90%;
             display: flex;
             flex-direction: column;
@@ -36,26 +36,40 @@
         <h1>New Unit!<span>Register a new Unit now!</span></h1>
         <form method="POST" action="{{ url('admin/unit/store') }}" enctype="multipart/form-data">
           @csrf
-            <div class="section"><span>1</span>First Name & Address</div>
-            <div class="inner-wrap">
-                <label>Your Full Name <input type="text" name="field1" /></label>
-                <label>Address <textarea name="field2"></textarea></label>
-            </div>
-        
-            <div class="section"><span>2</span>Email & Phone</div>
-            <div class="inner-wrap">
-                <label>Email Address <input type="email" name="field3" /></label>
-                <label>Phone Number <input type="text" name="field4" /></label>
-            </div>
-        
-            <div class="section"><span>3</span>Passwords</div>
-                <div class="inner-wrap">
-                <label>Password <input type="password" name="field5" /></label>
-                <label>Confirm Password <input type="password" name="field6" /></label>
-            </div>
-            <div class="button-section">
-             <input type="submit" name="Sign Up" />
-            </div>
+          @if (session()->has('message'))
+          <div class="success-here">
+              {{ session()->get('message') }}
+          </div>
+      @endif
+      <div class="section"><span>1</span>Name & Code</div>
+      <div class="inner-wrap">
+          <label>Unit name <input type="text" name="unit_name"
+                  value="{{ old('unit_name') }}" /></label>
+          @error('unit_name')
+              <div class="errors-here">{{ $message }}</div>
+          @enderror
+          <label>Unit code <input type="text" name="unit_code"
+                  value="{{ old('unit_code') }}" /></label>
+          @error('unit_code')
+              <div class="errors-here">{{ $message }}</div>
+          @enderror
+      </div>
+      <div class="section"><span>2</span>Course</div>
+      <div class="inner-wrap">
+        <label for="">Course</label>
+          <select name="course_name" id="">
+              <option value="">Select Course</option>
+              @foreach ($course as $item)
+                  <option value={{ $item->id }}>{{ $item->course_name }}</option>
+              @endforeach
+          </select>
+          @error('course_name')
+              <div class="errors-here">{{ $message }}</div>
+          @enderror
+      </div>
+      <div class="button-section">
+          <button type="submit">Submit</button>
+      </div>
         </form>
         </div>
 
