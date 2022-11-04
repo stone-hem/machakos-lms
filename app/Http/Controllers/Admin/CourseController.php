@@ -7,5 +7,22 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    //
+    public function index(){
+        return view('admin.course.index');
+    }
+    public function create(){
+        return view('admin.course.add');
+    }
+    public function store(){
+        
+    }
+    public function edit(){
+        return view('admin.course.edit');
+    }
+    public function update(){
+        
+    }
+    public function destroy(){
+        
+    }
 }

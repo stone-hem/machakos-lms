@@ -33,7 +33,7 @@
     <div class="push-down">
 
       <div class="form-style-10">
-        <h1>Edit!<span>Make appropriate changes now!</span></h1>
+        <h1>Edit Lecturer!<span>Make appropriate changes now!</span></h1>
         <form>
             <div class="section"><span>1</span>First Name & Address</div>
             <div class="inner-wrap">
