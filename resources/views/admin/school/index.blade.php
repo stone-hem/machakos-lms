@@ -35,19 +35,23 @@
         <caption>Schools</caption>
         <thead>
           <tr>
-            <th scope="col">Account</th>
-            <th scope="col">Due Date</th>
+            <th scope="col">School name</th>
+            <th scope="col">School Unique String</th>
+            <th scope="col">Date created</th>
             <th scope="col">Action</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
+          @foreach ($school as $item)
           <tr>
-            <td data-label="Account">Visa - 3412</td>
-            <td data-label="Due Date">04/01/2016</td>
-            <td data-label="Amount"><a href="{{ url('admin/school/edit') }}">Edit</a></td>
-            <td data-label="Period"><a href="">Remove</a></td>
+            <td data-label="School Name">{{ $item->school_name }}</td>
+            <td data-label="String">{{ $item->school_string }}</td>
+            <td data-label="Date Created">{{ $item->created_at->toDayDateTimeString() }}</td>
+            <td data-label="Action"><a href="{{ url('admin/school/edit') }}">Edit</a></td>
+            <td data-label="Action"><a href="">Remove</a></td>
           </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

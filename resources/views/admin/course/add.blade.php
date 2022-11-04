@@ -34,7 +34,8 @@
 
       <div class="form-style-10">
         <h1>New Course!<span>Register a new Course now!</span></h1>
-        <form>
+        <form method="POST" action="{{ url('admin/course/store') }}" enctype="multipart/form-data">
+          @csrf
             <div class="section"><span>1</span>First Name & Address</div>
             <div class="inner-wrap">
                 <label>Your Full Name <input type="text" name="field1" /></label>
