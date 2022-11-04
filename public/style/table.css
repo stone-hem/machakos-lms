@@ -8,12 +8,12 @@ table {
   }
   
   table caption {
-    color: dodgerblue;
+    color:#2A88AD;
     font-size: 1.5em;
     margin: .5em 0 .75em;
   }
   thead{
-    color: dodgerblue;
+    color: #2A88AD;
   }
   
   table tr {
@@ -38,7 +38,7 @@ table {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-color:dodgerblue;
+    background-color:#2A88AD;
     margin-top: 10px;
     }
     
@@ -57,7 +57,7 @@ table {
     }
     .circle:hover, .top-divide .view-pdf:hover {
     transform: scale(1.05);
-    background-color:blue;
+    background-color:#114c63;
     }
     .top-divide{
       margin: 0px 30px;
@@ -65,7 +65,7 @@ table {
       justify-content: space-between;
     }
     .top-divide .view-pdf{
-      background-color: dodgerblue;
+      background-color: #2A88AD;
       padding: 6px 8px;
       color: white;
       text-decoration: none;

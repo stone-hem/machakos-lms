@@ -29,10 +29,10 @@
     <div class="push-down">
      <div class="top-divide">
         <a href="" class="view-pdf">View Pdf</a>
-        <a href="{{ url('admin/lecturer/create') }}"><div class="circle"></div></a>
+        <a href="{{ url('admin/school/create') }}"><div class="circle"></div></a>
       </div>
       <table>
-        <caption>Lectures</caption>
+        <caption>Courses</caption>
         <thead>
           <tr>
             <th scope="col">Account</th>
@@ -48,7 +48,6 @@
             <td data-label="Amount"><a href="">Edit</a></td>
             <td data-label="Period"><a href="">Remove</a></td>
           </tr>
-         
         </tbody>
       </table>
     </div>

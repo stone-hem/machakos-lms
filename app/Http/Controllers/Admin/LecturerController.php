@@ -13,4 +13,16 @@ class LecturerController extends Controller
     public function create(){
         return view('admin.lecturer.add');
     }
+    public function store(){
+        
+    }
+    public function edit(){
+        return view('admin.lecturer.edit');
+    }
+    public function update(){
+        
+    }
+    public function destroy(){
+        
+    }
 }

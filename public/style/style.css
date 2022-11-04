@@ -10,7 +10,7 @@
   position: fixed;
   height: 100%;
   width: 240px;
-  background: dodgerblue;
+  background: #2A88AD;
   transition: all 0.5s ease;
 }
 .sidebar.active{
@@ -50,10 +50,10 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li a.active{
-  background: rgb(27, 83, 172);
+  background: #114c63;
 }
 .sidebar .nav-links li a:hover{
-  background: rgb(27, 83, 172);
+  background: #114c63;
 }
 .sidebar .nav-links li i{
   min-width: 60px;
@@ -134,7 +134,7 @@ nav .search-box .bx-search{
   position: absolute;
   height: 40px;
   width: 40px;
-  background: #2697FF;
+  background: #2A88AD;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);

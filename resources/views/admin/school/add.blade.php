@@ -33,7 +33,7 @@
     <div class="push-down">
 
       <div class="form-style-10">
-        <h1>New Lecturer!<span>Register a new lecturer now!</span></h1>
+        <h1>New School!<span>Register a new school now!</span></h1>
         <form>
             <div class="section"><span>1</span>First Name & Address</div>
             <div class="inner-wrap">
