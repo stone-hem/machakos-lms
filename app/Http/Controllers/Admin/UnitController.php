@@ -10,7 +10,12 @@ use Illuminate\Http\Request;
 class UnitController extends Controller
 {
     public function index(){
-        return view('admin.unit.index');
+        $unit=Unit::join('departments','departments.id','=','units.department_id')
+        ->join('schools','schools.id','=','units.school_id')
+        ->join('courses','courses.id','=','units.course_id')
+        ->get();
+
+        return view('admin.unit.index',compact('unit'));
     }
     public function create(){
         $course=Course::all();
@@ -22,18 +27,16 @@ class UnitController extends Controller
             'unit_code'=>'required|string|max:20',
             'course_name'=>'required|exists:courses,id',
         ]);
-        $course=Course::where('id',$request->department_name)->first();
-
-        return $course;
+        $course=Course::where('id',$request->course_name)->first();
 
 
-        $course_name=new Unit();
-        $course_name->course_name=$request->input('course_name');
-        $course_name->course_code=$request->input('course_code');
-        $course_name->school_id=$course->school_id;
-        $course_name->department_id=$course->department_id;
-        $course_name->course_id=$course->id;
-        $result=$course_name->save();
+        $unit=new Unit();
+        $unit->unit_name=$request->input('unit_name');
+        $unit->unit_code=$request->input('unit_code');
+        $unit->school_id=$course->school_id;
+        $unit->department_id=$course->department_id;
+        $unit->course_id=$course->id;
+        $result=$unit->save();
 
         if ($result) {
             return back()->with("message","Curriculum updated Successfully");
