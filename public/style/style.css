@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'nunito', sans-serif;
 }
+
 .sidebar{
   position: fixed;
   height: 100%;

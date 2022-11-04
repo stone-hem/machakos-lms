@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Machakos lms</title>
     <link rel="stylesheet" href="{{ asset('style/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/table.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/form.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <style>
@@ -17,24 +17,6 @@
             align-items: center;
             justify-content: center;
         }
-        form {
-  margin:20px auto;
-  width:300px
-}
-input {
-  margin-bottom:6px;
-  padding:10px;
-  width: 100%;
-  border:1px solid #CCC
-}
-button {
-  padding:10px;
-  background-color: dodgerblue;
-}
-label {
-  cursor:pointer
-}
-
 
      </style>
    </head>
@@ -49,17 +31,35 @@ label {
 
     @endsection
     <div class="push-down">
-      <div>Register A New Lecturer</div>
 
-<form id='login-form' action="" method='post'>
-  <input type="text" placeholder="First Name.." required>
-  <input type="text" placeholder="Last Name.." required>
-  <input type="email" placeholder="Last Name.." required>
-  <input type="text" placeholder="Id Number.." required>
-  <input type="text" placeholder="Kra Pin.." required>
-  <input type="text" placeholder="Phone Number.." required>
-  <button type='submit'>Register</button>
-</form>
+      <div class="form-style-10">
+        <h1>New Lecturer!<span>Register a new lecturer now!</span></h1>
+        <form>
+            <div class="section"><span>1</span>First Name & Address</div>
+            <div class="inner-wrap">
+                <label>Your Full Name <input type="text" name="field1" /></label>
+                <label>Address <textarea name="field2"></textarea></label>
+            </div>
+        
+            <div class="section"><span>2</span>Email & Phone</div>
+            <div class="inner-wrap">
+                <label>Email Address <input type="email" name="field3" /></label>
+                <label>Phone Number <input type="text" name="field4" /></label>
+            </div>
+        
+            <div class="section"><span>3</span>Passwords</div>
+                <div class="inner-wrap">
+                <label>Password <input type="password" name="field5" /></label>
+                <label>Confirm Password <input type="password" name="field6" /></label>
+            </div>
+            <div class="button-section">
+             <input type="submit" name="Sign Up" />
+             <span class="privacy-policy">
+             <input type="checkbox" name="field7">You agree to our Terms and Policy. 
+             </span>
+            </div>
+        </form>
+        </div>
 
     </div>
   </section>

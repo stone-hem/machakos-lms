@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\SchoolController;
@@ -9,16 +10,6 @@ use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,6 +27,8 @@ Route::middleware([
 
 Route::get('homepage',[HomeController::class,'index']);
 
+
+Route::get('admin/dashboard',[DashBoardController::class,'index']);
 
 Route::controller(SchoolController::class)->group(function(){
     Route::get('admin/school','index');
