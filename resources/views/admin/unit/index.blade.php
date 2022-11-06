@@ -29,7 +29,6 @@
     <div class="push-down">
      <div class="top-divide">
         <a href="" class="view-pdf">View Pdf</a>
-        <a href="{{ url('admin/unit/create') }}"><div class="circle"></div></a>
       </div>
       <table>
         <caption>Units</caption>

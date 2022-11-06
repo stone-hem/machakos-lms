@@ -54,10 +54,11 @@ table {
       font-weight:bold;
       font-family:courier;
       color:white;
+      background-color: rgb(68, 166, 68);
     }
     .circle:hover, .top-divide .view-pdf:hover {
     transform: scale(1.05);
-    background-color:#114c63;
+    background-color:rgb(59, 114, 59);
     }
     .top-divide{
       margin: 0px 30px;

@@ -29,25 +29,33 @@
     <div class="push-down">
      <div class="top-divide">
         <a href="" class="view-pdf">View Pdf</a>
-        <a href="{{ url('admin/student/create') }}"><div class="circle"></div></a>
+        
       </div>
       <table>
         <caption>Students</caption>
         <thead>
           <tr>
-            <th scope="col">Account</th>
-            <th scope="col">Due Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Registration Number</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Image</th>
             <th scope="col">Action</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
+          @foreach ($student as $item)
           <tr>
-            <td data-label="Account">Visa - 3412</td>
-            <td data-label="Due Date">04/01/2016</td>
+            <td data-label="Unit">{{ $item->student_name }}</td>
+            <td data-label="Code">{{ $item->student_email }}</td>
+            <td data-label="Course">{{ $item->student_reg }}</td>
+            <td data-label="Department">{{ $item->student_contact }}</td>
+            <td data-label="School">{{ $item->student_image }}</td>
             <td data-label="Amount"><a href="{{ url('admin/student/edit') }}">Edit</a></td>
             <td data-label="Period"><a href="">Remove</a></td>
           </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

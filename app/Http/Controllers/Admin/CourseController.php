@@ -13,20 +13,28 @@ class CourseController extends Controller
     public function index(){
         $course=Course::join('departments','departments.id','=','courses.department_id')
         ->join('schools','schools.id','=','courses.school_id')
+        ->select(
+            'schools.school_name',
+            'departments.department_name',
+            'courses.id',
+            'courses.course_name',
+            'courses.course_code',
+            'courses.created_at'
+        )
         ->get();
         return view('admin.course.index',compact('course'));
     }
-    public function create(){
-        $department=Department::all();
+    public function create($id){
+        
+        $department=Department::where('id',$id)->first();
         return view('admin.course.add',compact('department'));
     }
-    public function store(Request $request){
+    public function store(Request $request,$id){
         $validated=$request->validate([
             'course_name'=>'required|string|max:40',
             'course_code'=>'required|string|max:20',
-            'department_name'=>'required|exists:departments,id',
         ]);
-        $department=Department::where('id',$request->department_name)->first();
+        $department=Department::where('id',$id)->first();
 
 
         $course_name=new Course();

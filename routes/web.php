@@ -50,8 +50,8 @@ Route::controller(DepartmentController::class)->group(function(){
 
 Route::controller(CourseController::class)->group(function(){
     Route::get('admin/course','index');
-    Route::get('admin/course/create','create');
-    Route::post('admin/course/store','store');
+    Route::get('admin/course/create/{id}','create');
+    Route::post('admin/course/store/{id}','store');
     Route::get('admin/course/edit','edit');
     Route::put('admin/course/update','update');
     Route::delete('admin/course/destroy','destroy');
@@ -59,8 +59,8 @@ Route::controller(CourseController::class)->group(function(){
 
 Route::controller(UnitController::class)->group(function(){
     Route::get('admin/unit','index');
-    Route::get('admin/unit/create','create');
-    Route::post('admin/unit/store','store');
+    Route::get('admin/unit/create/{id}','create');
+    Route::post('admin/unit/store/{id}','store');
     Route::get('admin/unit/edit','edit');
     Route::put('admin/unit/update','update');
     Route::delete('admin/unit/destroy','destroy');
@@ -77,8 +77,8 @@ Route::controller(LecturerController::class)->group(function(){
 
 Route::controller(StudentController::class)->group(function(){
     Route::get('admin/student','index');
-    Route::get('admin/student/create','create');
-    Route::post('admin/student/store','store');
+    Route::get('admin/student/create/{id}','create');
+    Route::post('admin/student/store/{id}','store');
     Route::get('admin/student/edit','edit');
     Route::put('admin/student/update','update');
     Route::delete('admin/student/destroy','destroy');

@@ -11,6 +11,12 @@ class DepartmentController extends Controller
 {
     public function index(){
         $department=Department::join('schools','schools.id','departments.school_id')
+        ->select(
+            'schools.school_name',
+            'departments.id',
+            'departments.department_name',
+            'departments.created_at'
+        )
         ->get();
         return view('admin.department.index',compact('department'));
     }

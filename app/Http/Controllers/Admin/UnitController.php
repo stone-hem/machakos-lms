@@ -17,17 +17,16 @@ class UnitController extends Controller
 
         return view('admin.unit.index',compact('unit'));
     }
-    public function create(){
-        $course=Course::all();
+    public function create($id){
+        $course=Course::where('id',$id)->first();
         return view('admin.unit.add',compact('course'));
     }
-    public function store(Request $request){
+    public function store(Request $request,$id){
         $validated=$request->validate([
             'unit_name'=>'required|string|max:40',
             'unit_code'=>'required|string|max:20',
-            'course_name'=>'required|exists:courses,id',
         ]);
-        $course=Course::where('id',$request->course_name)->first();
+        $course=Course::where('id',$id)->first();
 
 
         $unit=new Unit();

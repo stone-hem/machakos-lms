@@ -32,8 +32,8 @@
         <div class="push-down">
 
             <div class="form-style-10">
-                <h1>New Course!<span>Register a new Course now!</span></h1>
-                <form method="POST" action="{{ url('admin/course/store') }}" enctype="multipart/form-data">
+                <h1>New Course!<span>{{ $department->department_name }}</span></h1>
+                <form method="POST" action="{{ url('admin/course/store/'.$department->id) }}" enctype="multipart/form-data">
                     @csrf
                     @if (session()->has('message'))
                         <div class="success-here">
@@ -50,19 +50,6 @@
                         <label>Course code <input type="text" name="course_code"
                                 value="{{ old('course_code') }}" /></label>
                         @error('course_code')
-                            <div class="errors-here">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="section"><span>2</span>School</div>
-                    <div class="inner-wrap">
-                      <label for="">Department</label>
-                        <select name="department_name" id="">
-                            <option value="">Select Department</option>
-                            @foreach ($department as $item)
-                                <option value={{ $item->id }}>{{ $item->department_name }}</option>
-                            @endforeach
-                        </select>
-                        @error('department_name')
                             <div class="errors-here">{{ $message }}</div>
                         @enderror
                     </div>
