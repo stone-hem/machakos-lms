@@ -13,11 +13,14 @@ table {
     margin: .5em 0 .75em;
   }
   thead{
-    color: #2A88AD;
+    color: white;
+  }
+  tbody{
+    color: white;
   }
   
   table tr {
-    background-color: #f8f8f8;
+    background-color: #2A88AD;
     border: 1px solid #ddd;
     padding: .35em;
   }
@@ -32,6 +35,19 @@ table {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .edit-table{
+    background-color: rgb(79, 176, 79);
+    padding: 6px 8px;
+  }
+  .remove-table{
+    background-color: rgb(173, 80, 80);
+    padding: 6px 8px;
   }
 
   .circle {

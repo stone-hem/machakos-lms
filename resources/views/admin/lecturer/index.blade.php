@@ -45,8 +45,8 @@
           <tr>
             <td data-label="Account">Visa - 3412</td>
             <td data-label="Due Date">04/01/2016</td>
-            <td data-label="Amount"><a href="{{ url('admin/lecturer/edit') }}">Edit</a></td>
-            <td data-label="Period"><a href="">Remove</a></td>
+            <td data-label="Amount"><a href="{{ url('admin/lecturer/edit') }}"  class="edit-table">Edit</a></td>
+            <td data-label="Period"><a href="" class="remove-table">Remove</a></td>
           </tr>
          
         </tbody>

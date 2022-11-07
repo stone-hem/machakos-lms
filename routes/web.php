@@ -34,8 +34,8 @@ Route::controller(SchoolController::class)->group(function(){
     Route::get('admin/school','index');
     Route::get('admin/school/create','create');
     Route::post('admin/school/store','store');
-    Route::get('admin/school/edit','edit');
-    Route::put('admin/school/update','update');
+    Route::get('admin/school/edit/{id}','edit');
+    Route::put('admin/school/update/{id}','update');
     Route::delete('admin/school/destroy','destroy');
 });
 

@@ -48,8 +48,8 @@
             <td data-label="School Name">{{ $item->school_name }}</td>
             <td data-label="String">{{ $item->school_string }}</td>
             <td data-label="Date Created">{{ $item->created_at->toDayDateTimeString() }}</td>
-            <td data-label="Action"><a href="{{ url('admin/school/edit') }}">Edit</a></td>
-            <td data-label="Action"><a href="">Remove</a></td>
+            <td data-label="Action"><a href="{{ url('admin/school/edit/'.$item->id) }}"  class="edit-table">Edit</a></td>
+            <td data-label="Action"><a href="" class="remove-table">Remove</a></td>
           </tr>
           @endforeach
         </tbody>

@@ -34,16 +34,30 @@
 
       <div class="form-style-10">
         <h1>Edit School!<span>Make appropriate changes now!</span></h1>
-        <form>
+        <form method="post" action="{{ url('admin/school/update/'.$school->id) }}" enctype="multipart/form-data">
+          @csrf
+          @method('PUT')
+         
           <div class="section"><span>1</span>Name & Identifier</div>
           <div class="inner-wrap">
-              <label>School name <input type="text" name="school_name" /></label>
-              <label>School Letter <input type="text" name="school_letter" /></label>
+              <label>School name <input type="text" name="school_name"  value="{{ old('school_name',$school->school_name??"") }}"/></label>
+              @error('school_name')
+                  <div class="errors-here">{{ $message }}</div>
+              @enderror
+              <label>School Letter <input type="text" name="school_letter" value="{{ old('school_letter',$school->school_string??"") }}"/></label>
+              @error('school_letter')
+                  <div class="errors-here">{{ $message }}</div>
+              @enderror
           </div>
           <div class="button-section">
-           <button type="submit">Submit</button>
+              <button type="submit">Submit</button>
+              @if (session()->has('message'))
+              <div class="success-here">
+                  {{ session()->get('message') }}
+              </div>
+          @endif
           </div>
-        </form>
+      </form>
         </div>
 
     </div>

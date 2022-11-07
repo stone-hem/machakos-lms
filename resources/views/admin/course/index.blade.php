@@ -58,8 +58,8 @@
             <td data-label="Date">{{ $item->created_at->toDayDateTimeString() }}</td>
             <td data-label="Action"><a href="{{ url('admin/unit/create/'.$item->id) }}"><div class="circle"></div></a></td>
             <td data-label="Action"><a href="{{ url('admin/student/create/'.$item->id) }}">Enroll</a></td>
-            <td data-label="Action"><a href="{{ url('admin/course/edit') }}">Edit</a></td>
-            <td data-label="Action"><a href="">Remove</a></td>
+            <td data-label="Action"><a href="{{ url('admin/course/edit') }}" class="edit-table">Edit</a></td>
+            <td data-label="Action"><a href="" class="remove-table">Remove</a></td>
           </tr>
           @endforeach
         </tbody>

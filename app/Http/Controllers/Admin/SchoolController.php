@@ -31,11 +31,23 @@ class SchoolController extends Controller
         }
 
     }
-    public function edit(){
-        return view('admin.school.edit');
+    public function edit($id){
+       $school=School::find($id);
+        return view('admin.school.edit',compact('school'));
     }
-    public function update(){
-        
+    public function update(Request $request,$id){
+        $validated=$request->validate([
+            'school_name'=>'required|string|max:40',
+            'school_letter'=>'required|alpha|max:1'
+        ]);
+        $school=School::find($id);
+        $school->school_name=$request->input('school_name');
+        $school->school_string=$request->input('school_letter');
+        $result=$school->update();
+
+        if ($result) {
+            return back()->with("message","updated..");
+        } 
     }
     public function destroy(){
         

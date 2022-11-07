@@ -52,8 +52,8 @@
             <td data-label="Course">{{ $item->student_reg }}</td>
             <td data-label="Department">{{ $item->student_contact }}</td>
             <td data-label="School">{{ $item->student_image }}</td>
-            <td data-label="Amount"><a href="{{ url('admin/student/edit') }}">Edit</a></td>
-            <td data-label="Period"><a href="">Remove</a></td>
+            <td data-label="Amount"><a href="{{ url('admin/student/edit') }}"  class="edit-table">Edit</a></td>
+            <td data-label="Period"><a href="" class="remove-table">Remove</a></td>
           </tr>
           @endforeach
         </tbody>
