@@ -32,8 +32,8 @@
         <div class="push-down">
 
             <div class="form-style-10">
-                <h1>New Lecturer!<span>Register a new lecturer now!</span></h1>
-                <form method="POST" action="{{ url('admin/lecturer/store') }}" enctype="multipart/form-data" >
+                <h1>New Lecturer!<span>{{ $department->department_name }}</span></h1>
+                <form method="POST" action="{{ url('admin/lecturer/store/'.$department->id) }}" enctype="multipart/form-data" >
                     @csrf
                     @if (session()->has('message'))
                         <div class="success-here">
@@ -65,31 +65,6 @@
                             <div class="errors-here">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="section"><span>3</span>School & Department</div>
-                    <div class="inner-wrap">
-                      <label for="">School</label>
-                        <select name="school_name" id="">
-                            <option value="">Select School</option>
-                            {{-- @foreach ($school as $item)
-                                <option value={{ $item->id }}>{{ $item->school_name }}</option>
-                            @endforeach --}}
-                        </select>
-                        @error('school_name')
-                            <div class="errors-here">{{ $message }}</div>
-                        @enderror
-                        <label for="">Department</label>
-                        <select name="school_name" id="">
-                          <option value="">Select Department</option>
-                          {{-- @foreach ($school as $item)
-                              <option value={{ $item->id }}>{{ $item->school_name }}</option>
-                          @endforeach --}}
-                      </select>
-                      @error('school_name')
-                          <div class="errors-here">{{ $message }}</div>
-                      @enderror
-
-                    </div>
-
 
                     <div class="button-section">
                       <button type="submit">Submit</button>

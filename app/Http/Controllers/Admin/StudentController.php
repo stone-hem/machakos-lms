@@ -41,7 +41,7 @@ class StudentController extends Controller
         $user=new User();
 
         try {
-            $path=$request->file('student_photo')->store('student','public');
+        $path=$request->file('student_photo')->store('student','public');
         $student->student_name=$request->input('student_name');
         $student->student_location=$request->input('address');
         $student->student_email=$request->input('email');
@@ -53,7 +53,7 @@ class StudentController extends Controller
         $student->department_id=$course->department_id;
         $student->course_id=$course->id;
 
-        $result=$student->save();
+        $student->save();
         } catch (\Throwable $th) {
             return response()->json(['error'=>$th]);
             DB::rollBack();
@@ -62,17 +62,18 @@ class StudentController extends Controller
         try {
             $user->name=$request->input('student_name');
             $user->email=$request->input('email');
-            $user->role=$request->input('role');
+            $user->role=2;
             $user->password=Hash::make($request->student_id);
+            $user->save();
         } catch (\Throwable $th) {
             return response()->json(['error'=>$th]);
             DB::rollBack();
         }
 
 
-        if(DB::commit()){
-            return back()->with("message","student enrolled successfully");
-        }
+        DB::commit();
+        return back()->with("message","student enrolled successfully");
+       
 
         
     }

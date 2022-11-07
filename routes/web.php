@@ -68,8 +68,8 @@ Route::controller(UnitController::class)->group(function(){
 
 Route::controller(LecturerController::class)->group(function(){
     Route::get('admin/lecturer','index');
-    Route::get('admin/lecturer/create','create');
-    Route::post('admin/lecturer/store','store');
+    Route::get('admin/lecturer/create/{id}','create');
+    Route::post('admin/lecturer/store/{id}','store');
     Route::get('admin/lecturer/edit','edit');
     Route::put('admin/lecturer/update','update');
     Route::delete('admin/lecturer/destroy','destroy');

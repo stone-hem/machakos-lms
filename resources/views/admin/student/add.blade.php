@@ -37,13 +37,14 @@
                     enctype="multipart/form-data">
                     @csrf
                     @if (session()->has('message'))
-                    <div class="success-here">
-                        {{ session()->get('message') }}
-                    </div>
-                @endif
+                        <div class="success-here">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     <div class="section"><span>1</span>Name & Address</div>
                     <div class="inner-wrap">
-                        <label>Student Full Name <input type="text" name="student_name" value="{{ old('student_name') }}"/></label>
+                        <label>Student Full Name <input type="text" name="student_name"
+                                value="{{ old('student_name') }}" /></label>
                         <label> Student Address
                             <textarea name="address">{{ old('address') }}</textarea>
                         </label>
@@ -69,7 +70,8 @@
 
                     <div class="section"><span>3</span>Id Number and Image</div>
                     <div class="inner-wrap">
-                        <label>Id Number <input type="text" name="id_number" value="{{ old('id_number') }}" /></label>
+                        <label>Id Number <input type="text" name="id_number"
+                                value="{{ old('id_number') }}" /></label>
                         <label>Student Photo<input type="file" name="student_photo" /></label>
                         @error('id_number')
                             <div class="errors-here">{{ $message }}</div>

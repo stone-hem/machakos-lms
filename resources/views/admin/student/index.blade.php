@@ -39,6 +39,7 @@
             <th scope="col">Email</th>
             <th scope="col">Registration Number</th>
             <th scope="col">Contact</th>
+            <th scope="col">Id</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
             <th scope="col">Action</th>
@@ -51,7 +52,8 @@
             <td data-label="Code">{{ $item->student_email }}</td>
             <td data-label="Course">{{ $item->student_reg }}</td>
             <td data-label="Department">{{ $item->student_contact }}</td>
-            <td data-label="School">{{ $item->student_image }}</td>
+            <td data-label="Department">{{ $item->student_id }}</td>
+            <td data-label="School" style="width: 40px; height:40px;"><img src="{{ asset('storage/'.$item->student_image) }}" alt="" style="width: 100%"></td>
             <td data-label="Amount"><a href="{{ url('admin/student/edit') }}"  class="edit-table">Edit</a></td>
             <td data-label="Period"><a href="" class="remove-table">Remove</a></td>
           </tr>

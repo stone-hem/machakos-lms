@@ -29,25 +29,31 @@
     <div class="push-down">
      <div class="top-divide">
         <a href="" class="view-pdf">View Pdf</a>
-        <a href="{{ url('admin/lecturer/create') }}"><div class="circle"></div></a>
+        <a href=""><div class="circle"></div></a>
       </div>
       <table>
         <caption>Lectures</caption>
         <thead>
           <tr>
-            <th scope="col">Account</th>
-            <th scope="col">Due Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact</th>
+            <th scope="col">School</th>
+            <th scope="col">Department</th>
             <th scope="col">Action</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
+          @foreach ($lecturer as $item)
           <tr>
-            <td data-label="Account">Visa - 3412</td>
-            <td data-label="Due Date">04/01/2016</td>
-            <td data-label="Amount"><a href="{{ url('admin/lecturer/edit') }}"  class="edit-table">Edit</a></td>
-            <td data-label="Period"><a href="" class="remove-table">Remove</a></td>
+            <td data-label=" Name">{{ $item->lecturer_name }}</td>
+            <td data-label="Contact">{{ $item->lecturer_contact }}</td>
+            <td data-label="School Name">{{ $item->school_name }}</td>
+            <td data-label="Department">{{ $item->department_name }}</td>
+            <td data-label="Action"><a href="{{ url('admin/lecturer/edit') }}"  class="edit-table">Edit</a></td>
+            <td data-label="Action"><a href="" class="remove-table">Remove</a></td>
           </tr>
+          @endforeach
          
         </tbody>
       </table>

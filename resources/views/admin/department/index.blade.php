@@ -41,6 +41,7 @@
             <th scope="col">Department</th>
             <th scope="col">Date Created</th>
             <th scope="col">New Course</th>
+            <th scope="col">New Lecturer</th>
             <th scope="col">Action</th>
             <th scope="col">Action</th>
           </tr>
@@ -51,7 +52,8 @@
             <td data-label="School">{{ $item->school_name }}</td>
             <td data-label="Department">{{ $item->department_name }}</td>
             <td data-label="Date">{{ $item->created_at->toDayDateTimeString() }}</td>
-            <td data-label="Action"><a href="{{ url('admin/course/create/'.$item->id) }}"><div class="circle"></div></a></td>
+            <td data-label="Action"><a href="{{ url('admin/course/create/'.$item->id) }}"><div class="circle" title='new course'></div></a></td>
+            <td data-label="Action"><a href="{{ url('admin/lecturer/create/'.$item->id) }}"><div class="circle" title='new lecturer'></div></a></td>
             <td data-label="Action"><a href="{{ url('admin/department/edit') }}"  class="edit-table">Edit</a></td>
             <td data-label="Action"><a href="" class="remove-table">Remove</a></td>
           </tr>
