@@ -1,14 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\CourseController;
-use App\Http\Controllers\Admin\DashBoardController;
-use App\Http\Controllers\Admin\DepartmentController;
-use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\StudentController;
-use App\Http\Controllers\Admin\UnitController;
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\LecturerController;
+use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Student\LearningController;
 
 
 Route::get('/', function () {
@@ -83,3 +84,8 @@ Route::controller(StudentController::class)->group(function(){
     Route::put('admin/student/update','update');
     Route::delete('admin/student/destroy','destroy');
 });
+
+Route::controller(LearningController::class)->group(function(){
+    Route::get('student/my-units','units');
+});
+

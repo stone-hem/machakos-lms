@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Hash;
 class StudentController extends Controller
 {
     public function index(){
-        $student=Student::join('schools','schools.id','=','students.school_id')
-        ->join('departments','departments.id','=','students.department_id')
-        ->join('courses','courses.id','=','students.course_id')
-        ->get();
+        $student=Student::all();
         return view('admin.student.index',compact('student'));
     }
     public function create($id){
@@ -36,9 +33,19 @@ class StudentController extends Controller
         ]);
         $course=Course::where('id',$id)->first();
 
-
         $student=new Student();
         $user=new User();
+
+        try {
+            $user->name=$request->input('student_name');
+            $user->email=$request->input('email');
+            $user->role=2;
+            $user->password=Hash::make($request->id_number);
+            $user->save();
+        } catch (\Throwable $th) {
+            return response()->json(['error'=>$th]);
+            DB::rollBack();
+        }
 
         try {
         $path=$request->file('student_photo')->store('student','public');
@@ -49,6 +56,7 @@ class StudentController extends Controller
         $student->student_id=$request->input('id_number');
         $student->student_image=$path;
         $student->student_reg=$course->course_code;
+        $student->user_id=$user->id;
         $student->school_id=$course->school_id;
         $student->department_id=$course->department_id;
         $student->course_id=$course->id;
@@ -59,16 +67,7 @@ class StudentController extends Controller
             DB::rollBack();
         }
 
-        try {
-            $user->name=$request->input('student_name');
-            $user->email=$request->input('email');
-            $user->role=2;
-            $user->password=Hash::make($request->student_id);
-            $user->save();
-        } catch (\Throwable $th) {
-            return response()->json(['error'=>$th]);
-            DB::rollBack();
-        }
+       
 
 
         DB::commit();

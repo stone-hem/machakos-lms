@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('student_reg');
             $table->string('student_id');
             $table->string('student_image')->nullable();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('school_id')->constrained('schools')->onDelete('cascade');
             $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');

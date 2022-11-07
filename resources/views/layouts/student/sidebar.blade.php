@@ -12,33 +12,33 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url('student/my-units') }}">
             <i class='bx bx-box' ></i>
-            <span class="links_name">Lectures</span>
+            <span class="links_name">My units</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Students</span>
+            <span class="links_name">My course details</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Courses</span>
+            <span class="links_name">Examinations</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class='bx bx-message' ></i>
-            <span class="links_name">Messages</span>
+            <span class="links_name">Assignments</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class='bx bx-heart' ></i>
-            <span class="links_name">Favorites</span>
+            <span class="links_name">Classes</span>
           </a>
         </li>
         <li>
@@ -48,10 +48,17 @@
           </a>
         </li>
         <li class="log_out">
-          <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
-          </a>
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <div class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            this.closest('form').submit(); " role="button">
+                     <i class='bx bx-log-out'></i>
+    
+                    {{ __('Log Out') }}
+                </a>
+            </div>
+        </form>
         </li>
       </ul>
   </div>

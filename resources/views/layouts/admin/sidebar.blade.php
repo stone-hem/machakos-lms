@@ -48,10 +48,19 @@
           </a>
         </li>
         <li class="log_out">
-          <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
-          </a>
+
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <div class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        this.closest('form').submit(); " role="button">
+                 <i class='bx bx-log-out'></i>
+
+                {{ __('Log Out') }}
+            </a>
+        </div>
+    </form>
+           
         </li>
       </ul>
   </div>
