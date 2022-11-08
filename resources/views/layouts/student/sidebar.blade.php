@@ -6,37 +6,37 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="{{ url('student/dashboard') }}" class="{{ request()->is('student/dashboard')?'active':'' }} {{ request()->is('homepage')?'active':'' }}">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="{{ url('student/my-units') }}">
+          <a href="{{ url('student/my-units') }}"  class="{{ request()->is('student/my-units')?'active':'' }}">
             <i class='bx bx-box' ></i>
             <span class="links_name">My units</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url('student/course/details') }}" class="{{ request()->is('student/course/details')?'active':'' }}">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">My course details</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url('student/examinations') }}" class="{{ request()->is('student/examinations')?'active':'' }}">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Examinations</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url('student/assignments') }}" class="{{ request()->is('student/assignments')?'active':'' }}">
             <i class='bx bx-message' ></i>
             <span class="links_name">Assignments</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url('student/classes') }}" class="{{ request()->is('student/classes')?'active':'' }}">
             <i class='bx bx-heart' ></i>
             <span class="links_name">Classes</span>
           </a>

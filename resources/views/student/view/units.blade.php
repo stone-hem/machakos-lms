@@ -26,24 +26,38 @@
      
    @endsection
    <div class="push-down">
-    <ul class="cards">
-      <li>
-        <a href="" class="card">
-          <img src="https://i.imgur.com/2DhmtJ4.jpg" class="card__image" alt="" />
-          <div class="card__overlay">
-            <div class="card__header">
-              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-              <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-              <div class="card__header-text">
-                <h3 class="card__title">kim Cattrall</h3>
-                <span class="card__status">3 hours ago</span>
-              </div>          
-            </div>
-            <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-          </div>
-        </a>
-      </li>    
-    </ul>
+    <div class="card-category-2">
+            
+      <span class="category-name">My Units</span> <br/><br/>     
+      <ul>
+        @foreach ($unit as $item)
+        <li>
+          <div class="img-card iCard-style2">
+              <div class="card-content">
+                  <div class="card-image">
+                      <span class="card-caption">{{ $item->course_name }}</span>
+                      <img src="{{ asset('images/lms-units.jpeg') }}"/>
+                  </div>
+                  
+                  <span class="card-title">{{ $item->unit_name }}</span>
+                  
+                  <div class="card-text">
+                      <p>
+                        The code for this unit is {{ $item->unit_code }}
+                      </p>
+                  </div>
+                  
+              </div>
+              
+              <div class="card-link">
+                  <a href="#" title="Access Content"><span>Access</span></a>
+              </div>
+          </div>                    
+      </li> 
+        @endforeach
+            
+      </ul>
+  </div>
    </div>  
   </section>
 

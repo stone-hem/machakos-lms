@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Student\LearningController;
-
+use App\Http\Controllers\Student\StudentDashBoardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -87,5 +87,13 @@ Route::controller(StudentController::class)->group(function(){
 
 Route::controller(LearningController::class)->group(function(){
     Route::get('student/my-units','units');
+    Route::get('student/course/details','details');
+    Route::get('student/examinations','exams');
+    Route::get('student/assignments','assignments');
+    Route::get('student/classes','classes');
+});
+
+Route::controller(StudentDashBoardController::class)->group(function(){
+    Route::get('student/dashboard','index');
 });
 
