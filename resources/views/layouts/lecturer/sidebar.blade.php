@@ -6,13 +6,13 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="{{ url('lecturer/dashboard') }}" >
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url('lecturer/my-units') }}">
             <i class='bx bx-box' ></i>
             <span class="links_name">My lectures</span>
           </a>

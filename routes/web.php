@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Lecturer\LecturerDashBoardController;
+use App\Http\Controllers\Lecturer\LecturerDisplayController;
 use App\Http\Controllers\Student\LearningController;
 use App\Http\Controllers\Student\StudentDashBoardController;
 
@@ -74,6 +76,9 @@ Route::controller(LecturerController::class)->group(function(){
     Route::get('admin/lecturer/edit','edit');
     Route::put('admin/lecturer/update','update');
     Route::delete('admin/lecturer/destroy','destroy');
+
+    Route::get('admin/lecturer/unit/{id}','unit');
+    Route::post('admin/lecturer/unit/allocate/{id}','allocate');
 });
 
 Route::controller(StudentController::class)->group(function(){
@@ -85,6 +90,10 @@ Route::controller(StudentController::class)->group(function(){
     Route::delete('admin/student/destroy','destroy');
 });
 
+
+
+
+//student
 Route::controller(LearningController::class)->group(function(){
     Route::get('student/my-units','units');
     Route::get('student/course/details','details');
@@ -93,7 +102,18 @@ Route::controller(LearningController::class)->group(function(){
     Route::get('student/classes','classes');
 });
 
+
 Route::controller(StudentDashBoardController::class)->group(function(){
     Route::get('student/dashboard','index');
 });
 
+
+//lecturer
+
+Route::controller(LecturerDashBoardController::class)->group(function(){
+    Route::get('lecturer/dashboard','index');
+});
+
+Route::controller(LecturerDisplayController::class)->group(function(){
+    Route::get('lecturer/my-units','index');
+});
