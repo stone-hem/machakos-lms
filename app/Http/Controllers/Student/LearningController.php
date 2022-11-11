@@ -28,7 +28,7 @@ class LearningController extends Controller
         ->where('courses.id',$student->course_id)
         ->first();
 
-        return view('student.view.details');
+        return view('student.view.details',compact('course'));
     }
 
     public function exams(){

@@ -14,25 +14,25 @@
         <li>
           <a href="#">
             <i class='bx bx-box' ></i>
-            <span class="links_name">Lectures</span>
+            <span class="links_name">My lectures</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Students</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Courses</span>
           </a>
         </li>
         <li>
           <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Classes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
             <i class='bx bx-message' ></i>
-            <span class="links_name">Messages</span>
+            <span class="links_name">Timetable</span>
           </a>
         </li>
         <li>

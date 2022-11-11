@@ -12,6 +12,38 @@
             top: 90px;
             margin: 0px 30px;
         }
+        .contain-details{
+          
+          width: 70vw;
+          height: 70vh;
+          border: 1px solid rgb(216, 215, 215);
+          border-top-left-radius: 30%;
+          border-bottom-right-radius: 30%;
+          -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+      -o-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+      box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3); 
+      display: flex;
+      flex-direction: row;
+        }
+        h3{
+         
+        }
+
+        .contain-details .profile-image-style{
+         width: 200px;
+        }
+        .contain-details .profile-image-style img{
+         height: 200px;
+        }
+        .course-name{
+         
+        
+        }
+        .course{
+        
+        }
+        
      </style>
    </head>
 <body>
@@ -25,7 +57,16 @@
      
    @endsection
    <div class="push-down">
-   <h3>Course details</h3>
+    <div class="contain-details">
+      <div class="profile-image-style">
+        <img src="{{ asset('images/lms-units.jpeg') }}"/>
+      </div>
+      <div class="right-details">
+        <span class="course-name">My Course:</span> 
+        <span class="course">Bachelar of Science in {{ $course->course_name }}</span>
+      </div>
+        
+    </div>
    </div>  
   </section>
 

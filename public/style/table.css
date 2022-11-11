@@ -13,14 +13,14 @@ table {
     margin: .5em 0 .75em;
   }
   thead{
-    color: white;
+    color: black;
   }
   tbody{
-    color: white;
+    color: black;
   }
   
   table tr {
-    background-color: #2A88AD;
+    /* background-color: #2A88AD; */
     border: 1px solid #ddd;
     padding: .35em;
   }

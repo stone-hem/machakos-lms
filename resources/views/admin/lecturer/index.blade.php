@@ -37,6 +37,7 @@
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Contact</th>
+            <th scope="col">Email</th>
             <th scope="col">School</th>
             <th scope="col">Department</th>
             <th scope="col">Action</th>
@@ -48,6 +49,7 @@
           <tr>
             <td data-label=" Name">{{ $item->lecturer_name }}</td>
             <td data-label="Contact">{{ $item->lecturer_contact }}</td>
+            <td data-label="Email">{{ $item->lecturer_email }}</td>
             <td data-label="School Name">{{ $item->school_name }}</td>
             <td data-label="Department">{{ $item->department_name }}</td>
             <td data-label="Action"><a href="{{ url('admin/lecturer/edit') }}"  class="edit-table">Edit</a></td>
