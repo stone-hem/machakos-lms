@@ -31,7 +31,7 @@ class CourseController extends Controller
     }
     public function store(Request $request,$id){
         $validated=$request->validate([
-            'course_name'=>'required|string|max:40',
+            'course_name'=>'required|string|max:100',
             'course_code'=>'required|string|max:20',
         ]);
         $department=Department::where('id',$id)->first();

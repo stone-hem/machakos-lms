@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('lecturer_location');
             $table->string('lecturer_contact');
             $table->string('lecturer_reg');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('school_id')->constrained('schools')->onDelete('cascade');
             $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
             $table->timestamps();

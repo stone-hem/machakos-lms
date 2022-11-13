@@ -27,8 +27,8 @@ class StudentController extends Controller
             'student_name'=>'required|string',
             'address'=>'required',
             'email'=>'required|email|unique:students,student_email',
-            'phone'=>'required|string|max:14',
-            'id_number'=>'required|numeric|digits_between:6,8',
+            'phone'=>'required|string|max:14|unique:students,student_contact',
+            'id_number'=>'required|numeric|digits_between:6,8|unique:students,student_id',
             'student_photo'=>'required|mimes:png,jpg,jpeg'
         ]);
         $course=Course::where('id',$id)->first();

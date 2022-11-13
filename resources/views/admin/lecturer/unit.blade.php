@@ -48,7 +48,7 @@
                 <div class="button-group" style="display: flex;">
                     <button type="submit">Submit Units</button>
                     @if (session()->has('success'))
-                    <div class="success-here">
+                    <div style="color: green">
                         {{ session()->get('success') }}
                     </div>
                 @endif

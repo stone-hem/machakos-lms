@@ -24,7 +24,7 @@ class UnitController extends Controller
     public function store(Request $request,$id){
         $validated=$request->validate([
             'unit_name'=>'required|string|max:40',
-            'unit_code'=>'required|string|max:20',
+            'unit_code'=>'required|string|max:20|unique:units,unit_code',
         ]);
         $course=Course::where('id',$id)->first();
 

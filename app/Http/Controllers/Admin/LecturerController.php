@@ -49,20 +49,6 @@ class LecturerController extends Controller
         $user = new User();
         $lecturer = new Lecturer();
 
-        try {
-            $lecturer->lecturer_name = $request->input('lecturer_name');
-            $lecturer->lecturer_location = $request->input('address');
-            $lecturer->lecturer_email = $request->input('email');
-            $lecturer->lecturer_contact = $request->input('phone_number');
-            $lecturer->lecturer_reg = $department->school_id;
-            $lecturer->school_id = $department->school_id;
-            $lecturer->department_id = $department->id;
-            $lecturer->save();
-        } catch (\Throwable $th) {
-            return response()->json(['error' => $th]);
-            DB::rollBack();
-        }
-
 
         try {
             $user->name = $request->input('lecturer_name');
@@ -70,6 +56,21 @@ class LecturerController extends Controller
             $user->role = 1;
             $user->password = Hash::make($request->phone_number);
             $user->save();
+        } catch (\Throwable $th) {
+            return response()->json(['error' => $th]);
+            DB::rollBack();
+        }
+
+        try {
+            $lecturer->lecturer_name = $request->input('lecturer_name');
+            $lecturer->lecturer_location = $request->input('address');
+            $lecturer->lecturer_email = $request->input('email');
+            $lecturer->lecturer_contact = $request->input('phone_number');
+            $lecturer->user_id=$user->id;
+            $lecturer->lecturer_reg = $department->school_id;
+            $lecturer->school_id = $department->school_id;
+            $lecturer->department_id = $department->id;
+            $lecturer->save();
         } catch (\Throwable $th) {
             return response()->json(['error' => $th]);
             DB::rollBack();

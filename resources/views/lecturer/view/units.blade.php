@@ -32,7 +32,7 @@
             
         <span class="category-name">My Units</span> <br/><br/>     
         <ul>
-          @foreach ($unit as $item)
+          @foreach ($lec_unit as $item)
           <li>
             <div class="img-card iCard-style2">
                 <div class="card-content">
