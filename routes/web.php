@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Lecturer\LecturerDashBoardController;
-use App\Http\Controllers\Lecturer\LecturerDisplayController;
+use App\Http\Controllers\Lecturer\LecturerUnitController;
 use App\Http\Controllers\Student\LearningController;
 use App\Http\Controllers\Student\StudentDashBoardController;
 
@@ -114,6 +114,10 @@ Route::controller(LecturerDashBoardController::class)->group(function(){
     Route::get('lecturer/dashboard','index');
 });
 
-Route::controller(LecturerDisplayController::class)->group(function(){
+Route::controller(LecturerUnitController::class)->group(function(){
     Route::get('lecturer/my-units','index');
+    Route::get('lecturer/my-units/create/{id}','create');
+    Route::post('lecturer/my-units/store/{id}','store');
+    Route::get('lecturer/my-units/{id}','get');
+    Route::get('lecturer/my-units/pdf/{id}','view_pdf');
 });

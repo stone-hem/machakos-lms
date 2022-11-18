@@ -9,6 +9,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
@@ -32,6 +33,9 @@ class StudentController extends Controller
             'student_photo'=>'required|mimes:png,jpg,jpeg'
         ]);
         $course=Course::where('id',$id)->first();
+        $year=Date('Y');
+
+      
 
         $student=new Student();
         $user=new User();
@@ -55,7 +59,8 @@ class StudentController extends Controller
         $student->student_contact=$request->input('phone');
         $student->student_id=$request->input('id_number');
         $student->student_image=$path;
-        $student->student_reg=$course->course_code;
+        $reg_create=$course->course_code."$user->id-".$year;
+        $student->student_reg=$reg_create;
         $student->user_id=$user->id;
         $student->school_id=$course->school_id;
         $student->department_id=$course->department_id;

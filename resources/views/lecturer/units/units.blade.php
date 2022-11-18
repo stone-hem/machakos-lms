@@ -50,10 +50,14 @@
                     </div>
                     
                 </div>
-                
+                <div style="display: flex;">
                 <div class="card-link">
-                    <a href="#" title="Access Content"><span>Access</span></a>
+                    <a href="{{ url('lecturer/my-units/create/'.$item->id) }}" title="Access Content"><span>Upload Content</span></a>
                 </div>
+                <div class="card-link">
+                  <a href="{{ url('lecturer/my-units/'.$item->id) }}" title="Access Content"><span>Access</span></a>
+              </div>
+            </div>
             </div>                    
         </li> 
           @endforeach
