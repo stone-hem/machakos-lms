@@ -96,6 +96,8 @@ Route::controller(StudentController::class)->group(function(){
 //student
 Route::controller(LearningController::class)->group(function(){
     Route::get('student/my-units','units');
+    Route::get('student/my-units/{id}','unit_display');
+    Route::get('student/my-units/content/{id}','unit_content');
     Route::get('student/course/details','details');
     Route::get('student/examinations','exams');
     Route::get('student/assignments','assignments');

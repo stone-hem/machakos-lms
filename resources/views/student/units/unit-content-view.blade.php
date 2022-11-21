@@ -28,12 +28,13 @@
    </style>
    </head>
 <body>
-  @include('layouts.lecturer.sidebar')
-  @section('lecturer-sidebar')
+  @include('layouts.student.sidebar')
+  @section('student-sidebar')
+    
   @endsection
-  <section class="home-section">
-    @include('layouts.lecturer.nav')
-    @section('lecturer-nav')
+   <section class="home-section">
+    @include('layouts.student.nav')
+    @section('student-nav')
     @endsection
     <div class="push-down">
       <h3 style="text-align: center;">{{ $unit->unit_name }}, {{ $unit_content->name }}</h3>

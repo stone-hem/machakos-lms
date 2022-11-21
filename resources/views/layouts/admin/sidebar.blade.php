@@ -6,7 +6,8 @@
     <ul class="nav-links">
         <li>
             <a href="{{ url('admin/dashboard') }}" class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
-                <i class='bx bx-grid-alt'></i>
+                {{-- <i class='bx bx-grid-alt'></i> --}}
+                <img src="{{ asset('images/icons8-dashboard-64.png') }}" alt="" >
                 <span class="links_name">Dashboard</span>
             </a>
         </li>

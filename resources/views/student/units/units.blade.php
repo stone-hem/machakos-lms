@@ -50,7 +50,7 @@
               </div>
               
               <div class="card-link">
-                  <a href="#" title="Access Content"><span>Access</span></a>
+                  <a href="{{ url('student/my-units/'.$item->id) }}" title="Access Content"><span>Access</span></a>
               </div>
           </div>                    
       </li> 
