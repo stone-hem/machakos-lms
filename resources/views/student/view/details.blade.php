@@ -43,6 +43,9 @@
         .course{
         
         }
+        .right-details{
+          margin: 10px 40px;
+        }
         
      </style>
    </head>
@@ -62,8 +65,14 @@
         <img src="{{ asset('images/lms-units.jpeg') }}"/>
       </div>
       <div class="right-details">
-        <span class="course-name">My Course:</span> 
-        <span class="course">Bachelar of Science in {{ $course->course_name }}</span>
+        <p class="course-name">My Course:</p> 
+        <p class="course">Bachelar of Science in {{ $course->course_name }}</p>
+        <p class="course-name">Course code:</p> 
+        <p class="course"> {{ $course->course_code }}</p>
+        <p class="course-name">Department:</p> 
+        <p class="course"> {{ $course->department_name }}</p>
+        <p class="course-name">School:</p> 
+        <p class="course"> {{ $course->school_name }}</p>
       </div>
         
     </div>

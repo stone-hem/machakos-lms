@@ -27,29 +27,23 @@
 
     @endsection
     <div class="push-down">
-     <div class="top-divide">
-        <a href="{{ url('pdf/schools') }}" class="view-pdf">View Pdf</a>
-        <a href="{{ url('admin/school/create') }}"><div class="circle"></div></a>
-      </div>
+     {{-- <div class="top-divide">
+        <a href="" class="view-pdf">View Pdf</a>
+        <a href="{{ url('') }}" class="view-pdf">Filter Students</a>
+      </div> --}}
       <table>
-        <caption>Schools</caption>
+        <caption>Select The Course to filter Students</caption>
         <thead>
           <tr>
-            <th scope="col">School name</th>
-            <th scope="col">School Unique String</th>
-            <th scope="col">Date created</th>
-            <th scope="col">Action</th>
-            {{-- <th scope="col">Action</th> --}}
+            <th scope="col">Name</th>
+            <th scope="col">Select</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($school as $item)
+          @foreach ($course as $item)
           <tr>
-            <td data-label="School Name">{{ $item->school_name }}</td>
-            <td data-label="String">{{ $item->school_string }}</td>
-            <td data-label="Date Created">{{ $item->created_at->toDayDateTimeString() }}</td>
-            <td data-label="Action"><a href="{{ url('admin/school/edit/'.$item->id) }}"  class="edit-table">Edit</a></td>
-            {{-- <td data-label="Action"><a href="" class="remove-table">Remove</a></td> --}}
+            <td data-label="Unit">{{ $item->course_name }}</td>
+            <td data-label="Amount"><a href="{{ url('admin/student/course/get/'.$item->id) }}"  class="edit-table">Select</a></td>
           </tr>
           @endforeach
         </tbody>

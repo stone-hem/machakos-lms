@@ -26,9 +26,7 @@
      
    @endsection
    <div class="push-down">
-    <div class="card-category-2">
-            
-      <span class="category-name">My Units</span> <br/><br/>     
+    <div class="card-category-2">    
       <ul>
         @foreach ($unit as $item)
         <li>
@@ -48,10 +46,15 @@
                   </div>
                   
               </div>
-              
-              <div class="card-link">
+              <div style="display: flex;">
+                <div class="card-link">
                   <a href="{{ url('student/my-units/'.$item->id) }}" title="Access Content"><span>Access</span></a>
               </div>
+              <div class="card-link">
+                <a href="{{ url('student/my-units/create/'.$item->id) }}" title="Access Content"><span>Upload</span></a>
+            </div>
+              </div>
+            
           </div>                    
       </li> 
         @endforeach

@@ -6,6 +6,56 @@
     <link rel="stylesheet" href="{{ asset('style/style.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      .table {
+              display: table;
+              width: 100%;
+              border-collapse: collapse;
+          }
+  
+          .table .tr {
+              display: table-row;
+              border: 1px solid #ddd;
+          }
+  
+          .table .tr:first-child {
+              font-weight: bold;
+              border-bottom: 2px solid #ddd;
+          }
+  
+          .table .tr:nth-child(even) {
+              background-color: #F9F9F9;
+          }
+  
+          .table .tr .td {
+              display: table-cell;
+              padding: 8px;
+              border-left: 1px solid #ddd;
+          }
+  
+          .table .tr .td:first-child {
+              border-left: 0;
+          }
+  
+          /* Not necessary for table styling */
+          .div-table,
+          .table-tag {
+              float: left;
+              margin: 2em;
+          }
+  
+          .div-table .title,
+          .table-tag .title {
+              text-align: center;
+              padding-bottom: 0.5em;
+          }
+          .center-report{
+            width: 90%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+     </style>
    </head>
 <body>
   @include('layouts.admin.sidebar')
@@ -55,13 +105,44 @@
 
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Graphical content</div>
-         
-         
+          <div class="center-report">
+            <div class="div-table">
+                <div class="title">Departments and Lectures</div>
+                <div class="table">
+                    <div class="tr">
+                        <div class="td">Department</div>
+                        <div class="td">Total</div>
+                        <div class="td">Share Type</div>
+                        <div class="td">Total</div>
+                    </div>
+                    <div class="tr">
+                      <div class="td">Loan Type</div>
+                      <div class="td">Total</div>
+                      <div class="td">Share Type</div>
+                      <div class="td">Total</div>
+                  </div>
+                </div>
+            </div>
+        </div>
         </div>
         <div class="top-sales box">
-          <div class="title">Summary</div>
-         
+          <div class="div-table">
+            <div class="title">Departments and Lectures</div>
+            <div class="table">
+                <div class="tr">
+                    <div class="td">Department</div>
+                    <div class="td">Lectureres</div>
+                   
+                </div>
+                <div class="tr">
+                  @foreach ($total_lecturer as $item)
+                  <div class="td">Loan Type</div>
+                  @endforeach
+              </div>
+              
+              
+            </div>
+        </div>
         </div>
       </div>
     </div>

@@ -9,8 +9,10 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Lecturer\LecturerDashBoardController;
 use App\Http\Controllers\Lecturer\LecturerUnitController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\Student\LearningController;
 use App\Http\Controllers\Student\StudentDashBoardController;
 
@@ -90,6 +92,11 @@ Route::controller(StudentController::class)->group(function(){
     Route::delete('admin/student/destroy','destroy');
 });
 
+Route::controller(ReportController::class)->group(function(){
+    Route::get('admin/reports/courses','student_course');
+    Route::get('admin/student/course/get/{id}','get_student_course');
+});
+
 
 
 
@@ -97,6 +104,8 @@ Route::controller(StudentController::class)->group(function(){
 Route::controller(LearningController::class)->group(function(){
     Route::get('student/my-units','units');
     Route::get('student/my-units/{id}','unit_display');
+    Route::get('student/my-units/create/{id}','unit_create');
+    Route::post('student/my-units/store/{id}','store');
     Route::get('student/my-units/content/{id}','unit_content');
     Route::get('student/course/details','details');
     Route::get('student/examinations','exams');
@@ -122,4 +131,14 @@ Route::controller(LecturerUnitController::class)->group(function(){
     Route::post('lecturer/my-units/store/{id}','store');
     Route::get('lecturer/my-units/{id}','get');
     Route::get('lecturer/my-units/pdf/{id}','view_pdf');
+});
+
+
+Route::controller(PdfController::class)->group(function(){
+    Route::get('pdf/students','students');
+    Route::get('pdf/lectures','lecturers');
+    Route::get('pdf/schools','schools');
+    Route::get('pdf/departments','departments');
+    Route::get('pdf/courses','courses');
+    Route::get('pdf/units','units');
 });

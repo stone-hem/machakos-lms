@@ -23,30 +23,30 @@
             <span class="links_name">My course details</span>
           </a>
         </li>
-        <li>
+        {{-- <li>
           <a href="{{ url('student/examinations') }}" class="{{ request()->is('student/examinations')?'active':'' }}">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Examinations</span>
           </a>
-        </li>
+        </li> --}}
         <li>
           <a href="{{ url('student/assignments') }}" class="{{ request()->is('student/assignments')?'active':'' }}">
             <i class='bx bx-message' ></i>
             <span class="links_name">Assignments</span>
           </a>
         </li>
-        <li>
+        {{-- <li>
           <a href="{{ url('student/classes') }}" class="{{ request()->is('student/classes')?'active':'' }}">
             <i class='bx bx-heart' ></i>
             <span class="links_name">Classes</span>
           </a>
-        </li>
-        <li>
+        </li> --}}
+        {{-- <li>
           <a href="#">
             <i class='bx bx-cog' ></i>
             <span class="links_name">Setting</span>
           </a>
-        </li>
+        </li> --}}
         <li class="log_out">
           <form method="POST" action="{{ route('logout') }}">
             @csrf

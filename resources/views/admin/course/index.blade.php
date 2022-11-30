@@ -31,7 +31,7 @@
     @endsection
     <div class="push-down">
      <div class="top-divide">
-        <a href="" class="view-pdf">View Pdf</a>
+        <a href="{{ url('pdf/courses') }}" class="view-pdf">View Pdf</a>
       </div>
       <table>
         <caption>Courses</caption>
@@ -44,8 +44,8 @@
             <th scope="col">Date Created</th>
             <th scope="col">New Unit</th>
             <th scope="col">Enroll Student</th>
-            <th scope="col">Action</th>
-            <th scope="col">Action</th>
+            {{-- <th scope="col">Action</th>
+            <th scope="col">Action</th> --}}
           </tr>
         </thead>
         <tbody>
@@ -58,8 +58,8 @@
             <td data-label="Date">{{ $item->created_at->toDayDateTimeString() }}</td>
             <td data-label="Action"><a href="{{ url('admin/unit/create/'.$item->id) }}"><div class="circle"></div></a></td>
             <td data-label="Action"><a href="{{ url('admin/student/create/'.$item->id) }}" class="edit-table">Enroll</a></td>
-            <td data-label="Action"><a href="{{ url('admin/course/edit') }}" class="edit-table">Edit</a></td>
-            <td data-label="Action"><a href="" class="remove-table">Remove</a></td>
+            {{-- <td data-label="Action"><a href="{{ url('admin/course/edit') }}" class="edit-table">Edit</a></td>
+            <td data-label="Action"><a href="" class="remove-table">Remove</a></td> --}}
           </tr>
           @endforeach
         </tbody>

@@ -28,8 +28,8 @@
     @endsection
     <div class="push-down">
      <div class="top-divide">
-        <a href="" class="view-pdf">View Pdf</a>
-        
+        <a href="{{ url('pdf/students') }}" class="view-pdf" target="blank">View Pdf</a>
+        <a href="{{ url('admin/reports/courses') }}" class="view-pdf">Filter Students</a>
       </div>
       <table>
         <caption>Students</caption>
@@ -41,8 +41,8 @@
             <th scope="col">Contact</th>
             <th scope="col">Id</th>
             <th scope="col">Image</th>
-            <th scope="col">Action</th>
-            <th scope="col">Action</th>
+            {{-- <th scope="col">Action</th>
+            <th scope="col">Action</th> --}}
           </tr>
         </thead>
         <tbody>
@@ -54,8 +54,8 @@
             <td data-label="Department">{{ $item->student_contact }}</td>
             <td data-label="Department">{{ $item->student_id }}</td>
             <td data-label="School" style="width: 40px; height:40px;"><img src="{{ asset('storage/'.$item->student_image) }}" alt="" style="width: 100%"></td>
-            <td data-label="Amount"><a href="{{ url('admin/student/edit') }}"  class="edit-table">Edit</a></td>
-            <td data-label="Period"><a href="" class="remove-table">Remove</a></td>
+            {{-- <td data-label="Amount"><a href="{{ url('admin/student/edit') }}"  class="edit-table">Edit</a></td>
+            <td data-label="Period"><a href="" class="remove-table">Remove</a></td> --}}
           </tr>
           @endforeach
         </tbody>

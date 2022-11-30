@@ -28,8 +28,8 @@
     @endsection
     <div class="push-down">
      <div class="top-divide">
-        <a href="" class="view-pdf">View Pdf</a>
-        <a href=""><div class="circle"></div></a>
+        <a href="{{ url('pdf/lectures') }}" class="view-pdf">View Pdf</a>
+        {{-- <a href=""><div class="circle"></div></a> --}}
       </div>
       <table>
         <caption>Lectures</caption>
@@ -41,8 +41,8 @@
             <th scope="col">School</th>
             <th scope="col">Department</th>
             <th scope="col">Action</th>
-            <th scope="col">Action</th>
-            <th scope="col">Action</th>
+            {{-- <th scope="col">Action</th>
+            <th scope="col">Action</th> --}}
           </tr>
         </thead>
         <tbody>
@@ -54,8 +54,8 @@
             <td data-label="School Name">{{ $item->school_name }}</td>
             <td data-label="Department">{{ $item->department_name }}</td>
             <td data-label="Action"><a href="{{ url('admin/lecturer/unit/'.$item->id) }}"  class="edit-table">Allocate Unit</a></td>
-            <td data-label="Action"><a href="{{ url('admin/lecturer/edit') }}"  class="edit-table">Edit</a></td>
-            <td data-label="Action"><a href="" class="remove-table">Remove</a></td>
+            {{-- <td data-label="Action"><a href="{{ url('admin/lecturer/edit') }}"  class="edit-table">Edit</a></td>
+            <td data-label="Action"><a href="" class="remove-table">Remove</a></td> --}}
           </tr>
           @endforeach
          

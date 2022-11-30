@@ -35,7 +35,7 @@ class LecturerUnitController extends Controller
         $validated=$request->validate([
             'content_name'=>'required',
             'description'=>'required|string|max:200',
-            'filename'=>'mimes:pdf,docx,doc,mp4|required',
+            'filename'=>'required',
         ]);
         $unit=Unit::where('id',$id)->first();
         $unit_content=new UnitContent();
@@ -47,7 +47,7 @@ class LecturerUnitController extends Controller
         $unit_content->name=$request->input('content_name');
         $unit_content->description=$request->input('description');
         $unit_content->unit_id=$unit->id;
-        $unit_content->lecturer_id=Auth::user()->id;
+        $unit_content->user_id=Auth::user()->id;
         $unit_content->school_id=$unit->school_id;
         $unit_content->department_id=$unit->department_id;
         $res=$unit_content->save();

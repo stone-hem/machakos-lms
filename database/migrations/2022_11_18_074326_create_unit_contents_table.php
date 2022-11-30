@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('filepath');
             $table->foreignId('unit_id')->constrained('units')->onDelete('cascade');
-            $table->foreignId('lecturer_id')->constrained('lecturers')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->foreignId('school_id')->constrained('schools')->onDelete('cascade');
             $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
             $table->timestamps();
